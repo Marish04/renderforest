@@ -1,0 +1,83 @@
+.hero
+    background: transparent linear-gradient(180deg, var(--white) 0%, var(--blue) 53%, var(--white) 100%) 0% 0% no-repeat padding-box
+    padding: 0 0 40px 0
+    .bg-img
+        background: url(../images/src/triangles.png) no-repeat center
+        height: 120px
+    .content-video-wrapper
+        gap: 110px
+    .content, .video
+        width: 50%
+    .p-wrapper
+        margin: 15px 0 50px 0
+    .line
+        height: 150px
+        width: 5px
+        margin-right: 20px
+    .p-wrapper
+        position: relative
+    .content-p
+        margin-left: 20px
+        &::before
+            content: ""
+            width: 3px
+            height: 100%
+            background-color: var(--blue400)
+            display: block
+            position: absolute
+            top: 0
+            left: 0
+            margin-right: 100px
+    .btn
+        border-radius: 25px
+        padding: 11px 30px
+        border: none
+        cursor: pointer
+        transition: all 100ms linear
+        &:hover
+            background-color: var(--blue500)
+            transition: all 100ms linear
+    .wideo-wrapper
+        max-width: 464px
+        border-radius: 10px
+        padding: 10px
+        margin-top: 54px
+    .video-figure
+        position: relative
+        padding-top: 66.8%
+    .iframe
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        object-fit: cover
+        border-radius: 10px
+    .img-figure
+        width: 100%
+        max-width: 174px
+        position: absolute
+    .img-figure-1
+        bottom: -40px
+        left: -120px
+        z-index: -1
+    .img-figure-2
+        top: -5px
+        right: -44px
+    .video
+        position: relative
+        z-index: 10
+    .logos 
+        margin-top: 70px
+        height: 75px
+        background: url(../images/src/logos.png)
+        background-size: cover
+        animation: spin 200s linear infinite
+
+
+@keyframes spin 
+  0% 
+    background-position-x: 5000px
+  100% 
+    background-position-x: 0
+    
