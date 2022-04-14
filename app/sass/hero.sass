@@ -6,7 +6,7 @@
         height: 120px
     .content-video-wrapper
         gap: 110px
-    .content, .video
+    .content, .video-img-container
         width: 50%
     .p-wrapper
         margin: 15px 0 50px 0
@@ -28,6 +28,8 @@
             top: 0
             left: 0
             margin-right: 100px
+    .span2
+        display: none
     .btn
         border-radius: 25px
         padding: 11px 30px
@@ -37,11 +39,12 @@
         &:hover
             background-color: var(--blue500)
             transition: all 100ms linear
-    .wideo-wrapper
+    .video-wrapper
         max-width: 464px
         border-radius: 10px
         padding: 10px
         margin-top: 54px
+        position: relative
     .video-figure
         position: relative
         padding-top: 66.8%
@@ -58,15 +61,14 @@
         max-width: 174px
         position: absolute
     .img-figure-1
-        bottom: -40px
-        left: -120px
+        bottom: -96px
+        left: -116px
         z-index: -1
     .img-figure-2
-        top: -5px
-        right: -44px
-    .video
-        position: relative
-        z-index: 10
+        top: -56px
+        right: -75px
+    .video-img-container
+        z-index: 1
     .logos 
         margin-top: 70px
         height: 75px
@@ -81,3 +83,40 @@
   100% 
     background-position-x: 0
     
+
+@media screen and (max-width: 992px)
+    .hero
+        .content-video-wrapper
+            gap: 56px
+        .img-figure
+            display: none
+        .bg-img
+            display: none
+        .content-video-wrapper
+            flex-direction: column
+        .content, .video-img-container
+            width: 100%
+        .title
+            @include fontSize(36)
+            margin-top: 17px
+            max-width: 500px
+        .span2
+            display: block
+        .span1
+            display: none
+        .btn
+            margin: 0 auto
+            display: block
+            min-width: 290px
+        .video-wrapper
+            margin-top: 0
+            max-width: 700px
+            margin: 0 auto
+        .logos
+            margin-top: 38px
+
+
+@media screen and (max-width: 768px)
+    .hero
+        .title
+            @include fontSize(28)

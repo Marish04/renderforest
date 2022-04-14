@@ -5,6 +5,8 @@
     .figure
         width: 100%
         max-width: 180px
+    .nav
+        z-index: 5
     .nav-ul
         gap: 30px
     .nav-link-explore, .lang-link
@@ -13,16 +15,20 @@
         &::after
             content: ""
             background: url(../images/src/arrow.svg) no-repeat
-            width: 10px
-            height: 6px
+            width: 7px
+            height: 4px
             position: absolute
             right: -15px
             top: 7px 
             display: block
             transition: all 300ms linear
-        &.open::after
-            transition: all 300ms linear
-            transform: rotate(180deg)
+        &.open
+            &::after
+                transform: rotate(180deg)
+    .nav-link, .lang-link
+        border: none
+        background-color: transparent
+        padding: 0
     .nav-link
         &:hover
             color: var(--blue200)
@@ -32,7 +38,6 @@
         width: 100%
         opacity: 0
         transition: all 300ms linear
-        z-index: 11
         border-radius: 10px
         box-shadow: 0px 1px 8px var(--blue500)
         &.open
@@ -40,6 +45,8 @@
     .explore-ul
         left: 7%
         max-width: 200px
+        // height: 300px
+        // overflow: auto
     .language-ul
         right: 0
         max-width: 70px
@@ -47,7 +54,7 @@
         position: relative
     .explore-li, .language-li
         padding: 15px 20px
-    .language-li, .explore-li
+    .explore-li, .language-li
         &:hover
             background-color: var(--white100)
             transition: all 300ms linear
@@ -58,18 +65,33 @@
 @media screen and ( max-width: 768px ) 
     .header
         .nav-ul
-            // display: none
+            display: none
+        .nav
+            display: flex
+            align-items: center
+            position: relative
+            &.open
+                .burger
+                    .line-1
+                        transform: rotate(45deg) translate(7px, 7px)
+                        transition: all 300ms linear
+                    .line-2
+                        transform: rotate(-45deg)
+                        transition: all 300ms linear
+                .nav-ul
+                    display: block 
+                    flex-direction: column
+                    position: absolute
+                    top: 65px
+                    right: 0
+                    box-shadow: 0px 1px 8px var(--blue500)
+                    border-radius: 10px
+                    width: 200px
+                    padding: 20px 
+        .nav-li:not(:last-child)
+            margin-bottom: 30px 
         .burger
             display: block
-            margin-top: 15px
-            &.open .line-1
-                transform: rotate(45deg) translate(7px, 7px)
-                transition: all 300ms linear
-            &.open .line-2
-                transform: rotate(-45deg)
-                transition: all 300ms linear
-            &.open .nav-ul
-                display: block  
         .span
             width: 30px
             height: 3px
@@ -77,20 +99,10 @@
             display: block
             margin: 7px 0
             transition: all 300ms linear
-        .nav-ul
-            flex-direction: column
-            position: absolute
-            top: 65px
-            right: 0
-            box-shadow: 0px 1px 8px var(--blue500)
-            width: 200px
-            padding: 20px
-        .nav
-            position: relative
         .explore-ul, .language-ul
             transition: all 100ms linear
+            box-shadow: initial
             &.open 
                 position: initial
-                box-shadow: initial
-                transition: all 100ms linear
-                
+        .explore-li, .language-li
+                padding: 10px 25px
