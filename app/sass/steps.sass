@@ -1,0 +1,123 @@
+.steps
+    padding: 70px 0 83px 0
+    background: transparent linear-gradient(41deg, var(--blue400) 0%, var(--blue100) 100%) 0% 0% no-repeat padding-box
+    .container
+        max-width: 904px
+    .title
+        max-width: 565px
+        text-align: center
+        margin: 0 auto
+        margin-bottom: 77px
+    .step
+        gap: 100px
+        justify-content: center
+    .step-2
+        margin: 30px 0 60px 0
+    .img-wrapper, .content
+        width: 50%
+    .figure
+        max-width: 416px
+        position: relative
+        padding-top: 67.3%
+    .figure-1
+        max-width: 416px
+    .figure-2
+        max-width: 376px
+    .figure-3
+        max-width: 382px
+    .img
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        object-fit: contain
+    .img-wrapper
+        position: relative
+    .img-move
+        position: absolute
+    .img-move1
+        top: 147px
+        left: 256px
+        max-width: 98px
+        transform-origin: 80% 20%
+        animation: move1 1500ms linear infinite alternate
+    .img-move2
+        top: 43px
+        left: 112px
+        max-width: 172px
+        transform-origin: 80% 20%
+        animation: move2 1500ms linear infinite alternate
+    .img-move3
+        top: 69px
+        left: 68px
+        max-width: 156px
+        transform-origin: top center
+        animation: move3 1500ms linear infinite alternate
+    .step-container
+        width: 100%
+        max-width: 85px
+        border-radius: 6px
+        padding: 7px 12px
+        text-align: center
+    .step-container1
+        margin-top: 100px
+    .step-container2
+        margin-top: 105px
+    .step-container3
+        margin-top: 60px
+    .step-title
+        margin: 15px 0
+        max-width: 360px
+    .step-p
+        max-width: 390px
+       
+    
+@keyframes move1 
+  0% 
+    transform: rotate(-10deg)
+  100% 
+    transform: rotate(-30deg)
+
+@keyframes move2 
+  0% 
+    transform: rotate(-20deg)
+  100% 
+    transform: rotate(5deg)
+
+@keyframes move3
+  0% 
+    transform: rotate(-15deg)
+  100% 
+    transform: rotate(15deg)    
+
+
+@media screen and (max-width: 992px)
+    .steps
+        padding: 60px 0
+        .title
+            @include fontSize(24)
+            margin-bottom: 60px
+        .step
+            flex-direction: column
+            gap: 0
+            align-items: center
+        .step-container
+            margin-top: 30px
+        .step-p
+            max-width: initial
+        .step-title
+            max-width: initial
+            @include fontSize(24)
+        .step-2 
+            .content:first-child
+                order: 1
+
+@media screen and (max-width: 768px)                
+    .steps
+        .content, .img-wrapper
+            width: 100%
+        .img-move
+            display: none
+        .figure
+            max-width: 345px

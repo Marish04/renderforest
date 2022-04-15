@@ -1,19 +1,20 @@
 .videos
     padding: 70px 0 30px 0
     background: transparent linear-gradient(180deg, #C4D8FF 0%, #FFFDFF 100%) 0% 0% no-repeat padding-box
-    text-align: center
+    .title
+        text-align: center
     .items-wrapper
         margin: 80px 0 60px 0
         gap: 45px
         flex-wrap: wrap
     .item
-        text-align: center
         width: 27%
         max-width: 345px
         border-radius: 5px
         box-shadow: 0px 3px 6px var(--blue900)
         flex-grow: 1
     .titel-btn-wrapper
+        text-align: center
         padding: 16px 20px 20px 20px
         border-bottom-right-radius: 5px
         border-bottom-left-radius: 5px
@@ -32,7 +33,31 @@
         object-fit: cover
         border-top-right-radius: 5px
         border-top-left-radius: 5px
+    .video-wrapper
+        position: relative
+    .play-btn
+        background: transparent
+        border: none
+        cursor: pointer
+        display: flex
+        align-items: center
+        position: absolute
+        bottom: 7px
+        left: 5px
+        &:hover .video-span
+            transform: scale(1)
+        &:hover .play-img
+            width: 22px
+    .video-span
+        transform: scale(0)
+        transition: all 300ms linear
+    .play-img
+        margin-right: 9px
+        width: 19px
+        transition: all 300ms linear
     .explore-btn
+        display: block
+        margin: 0 auto
         border: none
         background: transparent
         box-shadow: 0px 3px 6px var(--blue900)

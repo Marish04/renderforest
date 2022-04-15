@@ -1,0 +1,83 @@
+.use
+    padding: 70px 0 90px 0
+    .container
+        max-width: 1040px
+    .title
+        text-align: center
+        margin-bottom: 77px
+    .items-wrapper
+        gap: 200px
+        flex-direction: column
+        padding: 0 20px
+        // background: url(../images/src/dots.png) no-repeat
+        // background-size: cover
+    .item-1
+        align-self: start
+    .item-2
+        align-self: center
+    .item-3
+        align-self: end
+        margin-right: 40px
+    .img-text-container
+        border: 2px solid var(--blue700)
+        border-radius: 10px
+        padding: 25px 33px
+        width: 100%
+        max-width: 440px
+        position: relative
+        min-height: 170px
+        &::after
+            content: ""
+            width: 100%
+            height: 100%
+            background: rgba(255,255,255,.7)
+            backdrop-filter: blur(17px)
+            position: absolute
+            top: 0
+            left: 0
+            z-index: -1
+            border-radius: 10px
+    .img
+        width: 100%
+        position: absolute
+        z-index: -2
+    .img-1
+        max-width: 208px
+        top: 0
+        right: -112px
+    .img-2
+        max-width: 172px
+        top: -105px
+        right: -112px
+    .img-3
+        max-width: 136px
+        top: -71px
+        right: -63px
+    .bg-box
+        width: 176px
+        height: 168px
+        background: transparent linear-gradient(36deg, var(--blue300) 0%, var(--pink) 100%) 0% 0% no-repeat padding-box;
+        position: absolute
+        z-index: -2
+    .bg-box1
+        border-radius: 24px 10px 10px 
+        top: -20px
+        left: -20px
+    .bg-box2
+        border-radius: 10px 10px 24px 10px
+        bottom: -20px
+        right: -20px
+
+@media screen and (max-width: 768px)
+    .use
+        padding: 60px 0 80px 0
+        .title
+            @include fontSize(20)
+        .item-3
+            margin-right: 0
+        .img
+            display: none
+        .img-text-container
+            padding: 25px
+        .items-wrapper
+            gap: 80px
